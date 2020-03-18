@@ -16,7 +16,9 @@ public class CommonTools {
                 try {
                     BufferedReader reader=new BufferedReader(new FileReader(f));
                     while ((tmp=reader.readLine())!=null){
-                        string=string.concat(tmp);
+                        logger.msg(tmp);
+                        string=string.concat(tmp).concat("\n");
+                        logger.msg(string);
                     }
                     reader.close();
                 } catch (FileNotFoundException e) {
@@ -25,11 +27,18 @@ public class CommonTools {
                     e.printStackTrace();
                 }
             }else {
-                logger.err(f.getName()+" is not a file");
+                logger.warning(f.getName()+" is not a file");
             }
         }else {
-            logger.err(f.getName()+" not exist");
+            logger.warning(f.getName()+" not exist");
         }
         return string;
+    }
+    public static void wait(int second_count){
+        try {
+            Thread.sleep(second_count);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

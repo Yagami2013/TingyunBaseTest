@@ -26,7 +26,7 @@ public class JSONBuilder {
     */
     public void test(String str){
         if(str==null||"".equals(str)){
-            logger.err("空字符串，JSONBuilder停止解析");
+            logger.warning("空字符串，JSONBuilder停止解析");
             return;
         }
 
@@ -38,7 +38,8 @@ public class JSONBuilder {
                 logger.msg(o.getString("type"));
             }
         } catch (JSONException e) {
-            logger.err(e.getStackTrace().toString());
+            e.printStackTrace();
+            logger.err(e.getStackTrace());
         }
     }
     public void test(File f){
