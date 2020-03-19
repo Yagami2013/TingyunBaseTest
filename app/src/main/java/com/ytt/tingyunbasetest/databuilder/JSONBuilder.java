@@ -6,6 +6,7 @@ import android.widget.CalendarView;
 import com.ytt.tingyunbasetest.util.CommonTools;
 import com.ytt.tingyunbasetest.util.LogY;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,7 +36,12 @@ public class JSONBuilder {
         try {
             int len=str.length();
             logger.warning("str length:"+len+";str end with"+str.charAt(len-2));
-            o = new JSONObject(str);
+            if(str.startsWith("[")){
+                JSONArray json=new JSONArray(str);
+                o=json.getJSONObject(0);
+            }else {
+                o = new JSONObject(str);
+            }
             logger.msg(o.names().toString());
             if (o.has("type")){
                 logger.msg(o.getString("type"));
