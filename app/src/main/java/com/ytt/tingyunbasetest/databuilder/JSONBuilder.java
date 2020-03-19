@@ -1,6 +1,7 @@
 package com.ytt.tingyunbasetest.databuilder;
 
 import android.util.Log;
+import android.widget.CalendarView;
 
 import com.ytt.tingyunbasetest.util.CommonTools;
 import com.ytt.tingyunbasetest.util.LogY;
@@ -32,6 +33,8 @@ public class JSONBuilder {
 
         JSONObject o= null;
         try {
+            int len=str.length();
+            logger.warning("str length:"+len+";str end with"+str.charAt(len-2));
             o = new JSONObject(str);
             logger.msg(o.names().toString());
             if (o.has("type")){

@@ -16,9 +16,9 @@ public class CommonTools {
                 try {
                     BufferedReader reader=new BufferedReader(new FileReader(f));
                     while ((tmp=reader.readLine())!=null){
-                        logger.msg(tmp);
+                        //logger.msg(tmp);
                         string=string.concat(tmp).concat("\n");
-                        logger.msg(string);
+                        //logger.msg(string);
                     }
                     reader.close();
                 } catch (FileNotFoundException e) {
@@ -32,6 +32,9 @@ public class CommonTools {
         }else {
             logger.warning(f.getName()+" not exist");
         }
+        //int l=string.length();
+        //logger.warning("str length:"+l+";str end with"+string.charAt(l-2));
+        logger.msg(string);
         return string;
     }
     public static void wait(int second_count){
