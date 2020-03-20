@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.ytt.tingyunbasetest.activity.TestPage;
 import com.ytt.tingyunbasetest.databuilder.JSONBuilder;
+import com.ytt.tingyunbasetest.databuilder.Trace;
 
 import java.io.File;
 
@@ -43,5 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Trace.all();
     }
 }

@@ -39,7 +39,7 @@ public class CommonTools {
     }
     public static void wait(int second_count){
         try {
-            Thread.sleep(second_count);
+            Thread.sleep(second_count*1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
