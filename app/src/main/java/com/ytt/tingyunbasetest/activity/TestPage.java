@@ -24,7 +24,8 @@ public class TestPage extends AppCompatActivity {
     private void setData(){
         data=new String[]{
                "测试JSON",
-               "测试SQL"
+               "测试SQL",
+                "测试retrofit"
         };
     }
     private void setListItemListener(){
@@ -37,6 +38,9 @@ public class TestPage extends AppCompatActivity {
                         break;
                     case 1:
                         Trace.getSQL();
+                        break;
+                    case 2:
+                        Trace.getNet();
                         break;
                         default:
                             Trace.all();

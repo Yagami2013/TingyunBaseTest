@@ -35,5 +35,8 @@ public class Trace {
 
     public static void getNet() {
         //todo:use retrofit,OK3,HttpUrlConnection to start requests
+        RetrofitBuilder builder=new RetrofitBuilder();
+        builder.get_async();
+
     }
 }

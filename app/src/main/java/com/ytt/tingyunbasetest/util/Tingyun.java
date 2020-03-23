@@ -38,7 +38,7 @@ public class Tingyun {
         NBSAppAgent.endTracer(traceLabel);
     }
     public static void embedWebview(WebView view, int newProgress){
-        NBSWebChromeClient.initJSMonitor(view,newProgress);
+        //NBSWebChromeClient.initJSMonitor(view,newProgress);
     }
     public static void setCrashMsg(String key,String value){
         NBSAppAgent.setUserCrashMessage(key,value);
