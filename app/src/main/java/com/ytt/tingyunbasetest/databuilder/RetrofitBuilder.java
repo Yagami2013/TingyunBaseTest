@@ -9,9 +9,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class RetrofitBuilder {
-    private LogY logger=new LogY(this.getClass().getSimpleName());
+    private static LogY logger=new LogY("RetrofitBuilder");
+    private String host="https://voice.baidu.com/";
     private Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://voice.baidu.com/")
+            .baseUrl(host)
             .build();
     private InterfaceBaidu request=retrofit.create(InterfaceBaidu.class);
     public void get_async(){
@@ -28,6 +29,30 @@ public class RetrofitBuilder {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 logger.msg(t.getCause().toString());
+            }
+        });
+    }
+    public static void get(String host){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(host)
+                .build();
+        BaseInterfaceRetrofit request=retrofit.create(BaseInterfaceRetrofit.class);
+        Call<ResponseBody> call=request.get();
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                logger.msg("Response code:"+response.code());
+                logger.msg("Response size:"+response.body().contentLength());
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                if(t==null||t.getCause()==null){
+                    logger.msg("unknown error");
+                }else {
+                    logger.msg(t.getCause().toString());
+                }
+
             }
         });
     }

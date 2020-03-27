@@ -1,21 +1,18 @@
 package com.ytt.tingyunbasetest.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ytt.tingyunbasetest.R;
-import com.ytt.tingyunbasetest.adapter.YttListAdapter;
-import com.ytt.tingyunbasetest.databuilder.JSONBuilder;
 import com.ytt.tingyunbasetest.databuilder.Trace;
-
-import java.io.File;
+import com.ytt.tingyunbasetest.service.NetRequest;
 
 public class TestPage extends AppCompatActivity {
     private AdapterView.OnItemClickListener listItemListener;
@@ -25,7 +22,9 @@ public class TestPage extends AppCompatActivity {
         data=new String[]{
                "测试JSON",
                "测试SQL",
-                "测试retrofit"
+                "测试retrofit",
+                "测试X5",
+                "start NetService"
         };
     }
     private void setListItemListener(){
@@ -41,6 +40,12 @@ public class TestPage extends AppCompatActivity {
                         break;
                     case 2:
                         Trace.getNet();
+                        break;
+                    case 3:
+                        startActivity(new Intent(TestPage.this, X5Demo.class));
+                        break;
+                    case 4:
+                        startService(new Intent(TestPage.this, NetRequest.class));
                         break;
                         default:
                             Trace.all();

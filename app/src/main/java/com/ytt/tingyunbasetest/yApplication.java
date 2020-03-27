@@ -10,6 +10,7 @@ public class yApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         Tingyun.initWukong(base);
+
     }
 
 }

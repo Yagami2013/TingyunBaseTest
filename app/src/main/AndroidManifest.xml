@@ -29,6 +29,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.TestPage"/>
+        <activity android:name=".activity.X5Demo"/>
+        <service android:name=".service.NetRequest"
+            android:process=".NetService"/>
     </application>
 
 </manifest>

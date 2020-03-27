@@ -6,6 +6,7 @@ import android.webkit.WebView;
 
 import com.networkbench.agent.impl.NBSAppAgent;
 import com.networkbench.agent.impl.instrumentation.NBSWebChromeClient;
+import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 
 import java.util.Map;
 
@@ -15,6 +16,7 @@ public class Tingyun {
                 .setHttpEnabled(true)
                 .setRedirectHost("10.128.1.7:7071")
                 //.setRedirectHost("10.128.1.52:8603")
+                .setStartOption(511)
                 .start(context);
 
         NBSAppAgent.setUserIdentifier("111");
@@ -38,7 +40,13 @@ public class Tingyun {
         NBSAppAgent.endTracer(traceLabel);
     }
     public static void embedWebview(WebView view, int newProgress){
-        //NBSWebChromeClient.initJSMonitor(view,newProgress);
+        NBSWebChromeClient.initJSMonitor(view,newProgress);
+    }
+    public static void embedX5Webview(com.tencent.smtt.sdk.WebView view,int newProgress){
+        NBSWebChromeX5Client.initJSMonitorX5(view,newProgress);
+    }
+    public static void addX5Bridge(com.tencent.smtt.sdk.WebView view){
+        NBSWebChromeX5Client.addWebViewBridge(view);
     }
     public static void setCrashMsg(String key,String value){
         NBSAppAgent.setUserCrashMessage(key,value);

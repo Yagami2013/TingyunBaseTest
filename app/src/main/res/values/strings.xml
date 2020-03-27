@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TingyunBaseTest</string>
+    <string name="webviewDefaultUrl">http://hao123.com/</string>
 </resources>
