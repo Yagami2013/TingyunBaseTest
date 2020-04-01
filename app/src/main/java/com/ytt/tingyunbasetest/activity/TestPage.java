@@ -1,5 +1,6 @@
 package com.ytt.tingyunbasetest.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ytt.tingyunbasetest.R;
 import com.ytt.tingyunbasetest.databuilder.Trace;
 import com.ytt.tingyunbasetest.service.NetRequest;
+import com.ytt.tingyunbasetest.util.CommonTools;
+import com.ytt.tingyunbasetest.util.Tingyun;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TestPage extends AppCompatActivity {
     private AdapterView.OnItemClickListener listItemListener;
@@ -24,7 +30,9 @@ public class TestPage extends AppCompatActivity {
                "测试SQL",
                 "测试retrofit",
                 "测试X5",
-                "start NetService"
+                "start NetService",
+                "ANR test",
+                "自定义错误"
         };
     }
     private void setListItemListener(){
@@ -46,6 +54,20 @@ public class TestPage extends AppCompatActivity {
                         break;
                     case 4:
                         startService(new Intent(TestPage.this, NetRequest.class));
+                        break;
+                    case 5:
+                        Trace.all();
+                        CommonTools.wait(5);
+                        CommonTools.alert(getApplicationContext(),"action response finish");
+                        break;
+                    case 6:
+                        Map<String,Object> meta=new HashMap<String, Object>();
+                        try {
+                            meta.put("class",this);
+                            throw new Exception();
+                        }catch (Exception e){
+                            Tingyun.reportException("error message",e,meta);
+                        }
                         break;
                         default:
                             Trace.all();

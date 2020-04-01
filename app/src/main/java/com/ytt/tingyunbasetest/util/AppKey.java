@@ -14,4 +14,6 @@ public class AppKey {
     static String RN="017f459cfc3a487e9bdc0264cb8ba511";
     static String rum3_0="fead04f611f94245b34804e0cd1f3fed";
     static String yangtt3_0="4e675ddbede4414baf66afbc01cc2bba";
+    static String syh242="6a9c00ee6d38455fa0d8e50ab5f7453f";
+    static String syh67="e8bb45a0435c4a7b8999f705548b8a3b";
 }

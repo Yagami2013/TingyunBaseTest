@@ -12,9 +12,10 @@ import java.util.Map;
 
 public class Tingyun {
     public static void initWukong(Context context){
-        NBSAppAgent.setLicenseKey(AppKey.yangtt3_0)
+        NBSAppAgent.setLicenseKey(AppKey.syh67)
                 .setHttpEnabled(true)
-                .setRedirectHost("10.128.1.7:7071")
+                .setRedirectHost("192.168.2.67:8081")
+                //.setRedirectHost("10.128.1.7:7071")
                 //.setRedirectHost("10.128.1.52:8603")
                 .setStartOption(511)
                 .start(context);

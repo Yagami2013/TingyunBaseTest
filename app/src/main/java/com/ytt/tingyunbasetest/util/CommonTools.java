@@ -1,5 +1,8 @@
 package com.ytt.tingyunbasetest.util;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,5 +46,8 @@ public class CommonTools {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+    public static void alert(Context context,String msg){
+        Toast.makeText(context,msg,Toast.LENGTH_LONG);
     }
 }
