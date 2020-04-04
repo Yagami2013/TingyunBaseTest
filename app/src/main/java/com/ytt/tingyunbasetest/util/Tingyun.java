@@ -18,7 +18,7 @@ public class Tingyun {
                 //.setRedirectHost("10.128.1.7:7071")
                 //.setRedirectHost("10.128.1.52:8603")
                 .setStartOption(511)
-                .start(context);
+                .start(context); 
 
         NBSAppAgent.setUserIdentifier("111");
     }
