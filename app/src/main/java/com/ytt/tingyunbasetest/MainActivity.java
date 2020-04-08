@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.ytt.tingyunbasetest.activity.TestPage;
 import com.ytt.tingyunbasetest.databuilder.Trace;
+import com.ytt.tingyunbasetest.util.CommonTools;
 import com.ytt.tingyunbasetest.util.LogY;
 
 import java.io.File;

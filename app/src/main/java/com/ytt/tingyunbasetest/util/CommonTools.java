@@ -48,6 +48,6 @@ public class CommonTools {
         }
     }
     public static void alert(Context context,String msg){
-        Toast.makeText(context,msg,Toast.LENGTH_LONG);
+        Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
     }
 }

@@ -32,7 +32,8 @@ public class TestPage extends AppCompatActivity {
                 "测试X5",
                 "start NetService",
                 "ANR test",
-                "自定义错误"
+                "自定义错误",
+                "Crash"
         };
     }
     private void setListItemListener(){
@@ -68,6 +69,9 @@ public class TestPage extends AppCompatActivity {
                         }catch (Exception e){
                             Tingyun.reportException("error message",e,meta);
                         }
+                        break;
+                    case 7:
+                        Trace.getCrash();
                         break;
                         default:
                             Trace.all();

@@ -9,8 +9,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
-        //classpath  fileTree(dir:'/Users/ytt/Desktop/jars/2.15.0/rewriter-2.14.5',include:['*.jar'])
-        classpath "com.networkbench:tingyun-ea-agent-android-gradle-plugin:2.13.7.1"
+        classpath  fileTree(dir:'/Users/ytt/Desktop/jars/2.15.0/rewriter-2.14.5',include:['*.jar'])
+        //classpath  fileTree(dir:'/Users/ytt/Desktop/TingyunApp-ea-Android-2.13.7/TY_EA_rewriter',include:['*.jar'])
+        //classpath "com.networkbench:tingyun-ea-agent-android-gradle-plugin:2.13.7"
         
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
