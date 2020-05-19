@@ -2,14 +2,23 @@
 
 buildscript {
     repositories {
-        google()
-        jcenter()
+        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        //google()
+        //jcenter()
         maven { url "http://nexus2.tingyun.com/nexus/content/repositories/snapshots/" }
         
     }
     dependencies {
+
         classpath 'com.android.tools.build:gradle:3.4.2'
         classpath  fileTree(dir:'G:\\TingyunApp\\TestBuild\\2.15\\nbs\\rewriter-2.15.0',include:['*.jar'])
+
+        //classpath 'com.android.tools.build:gradle:3.5.3'
+        //classpath  fileTree(dir:'/home/kaitlyn/Projects/nbs/rewriter-2.15.0',include:['*.jar'])
+
         //classpath  fileTree(dir:'/Users/ytt/Desktop/TingyunApp-ea-Android-2.13.7/TY_EA_rewriter',include:['*.jar'])
         //classpath "com.networkbench:tingyun-ea-agent-android-gradle-plugin:2.13.7"
         
@@ -20,8 +29,12 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        //google()
+        //jcenter()
         maven { url "http://nexus2.tingyun.com/nexus/content/repositories/snapshots/" }
         
     }

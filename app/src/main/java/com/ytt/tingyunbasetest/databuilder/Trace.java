@@ -59,4 +59,6 @@ public class Trace {
         RetrofitBuilder.get("http://192.168.");
     }
 
+    public static native String getKey();
+
 }

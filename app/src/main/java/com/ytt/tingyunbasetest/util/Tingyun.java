@@ -11,23 +11,24 @@ import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 import java.util.Map;
 
 public class Tingyun {
+    private static String key3_0Sun="";
     public static void initWukong(Context context){
-        NBSAppAgent.setLicenseKey("094e27493fb54536bee392598b1a4544")
-                .setHttpEnabled(false)
-                .setRedirectHost("redirect.networkbench.com")
-                //.setStartOption(511)
+
+        NBSAppAgent.setLicenseKey(key3_0Sun)
+                .setHttpEnabled(true)
+                .setStartOption(511)
                 .start(context); 
 
         NBSAppAgent.setUserIdentifier("123");
     }
     public static void setAppStartEnd(String className){
-        //NBSAppAgent.setCustomOnResumeEndIns(className);
+        NBSAppAgent.setCustomOnResumeEndIns(className);
     }
     public static void reportException(String msg, Exception e, Map<String,Object> metaData){
-        //NBSAppAgent.reportError(msg,e,metaData);
+        NBSAppAgent.reportError(msg,e,metaData);
     }
     public static void reportError(String msg, Map<String,Object> metaData){
-        //NBSAppAgent.reportError(msg,metaData);
+        NBSAppAgent.reportError(msg,metaData);
     }
     public static void setUserIdentifier(String uid){
         NBSAppAgent.setUserIdentifier(uid);

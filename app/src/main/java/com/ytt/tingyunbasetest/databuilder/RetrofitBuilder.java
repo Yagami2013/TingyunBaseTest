@@ -28,7 +28,11 @@ public class RetrofitBuilder {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                logger.msg(t.getCause().toString());
+                if((t!=null)&&(t.getCause()!=null))
+                {
+                    logger.msg(t.getCause().toString());
+                }
+
             }
         });
     }
