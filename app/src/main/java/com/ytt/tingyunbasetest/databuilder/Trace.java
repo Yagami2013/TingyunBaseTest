@@ -57,6 +57,6 @@ public class Trace {
         builder.get_async();
         RetrofitBuilder.get("https://github.com/");
         RetrofitBuilder.get("http://192.168.");
-
     }
+
 }
