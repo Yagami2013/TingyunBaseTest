@@ -11,10 +11,11 @@ import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 import java.util.Map;
 
 public class Tingyun {
-    private static String key3_0Sun="";
+    private static String key="88272a24bf6f4255b9abdb5799fc4ea1";
     public static void initWukong(Context context){
-        NBSAppAgent.setLicenseKey(key3_0Sun)
+        NBSAppAgent.setLicenseKey(key)
                 .setHttpEnabled(true)
+                .setRedirectHost("192.168.2.100:8081")
                 .setStartOption(511)
                 .start(context); 
 
@@ -28,6 +29,16 @@ public class Tingyun {
     }
     public static void reportError(String msg, Map<String,Object> metaData){
         NBSAppAgent.reportError(msg,metaData);
+    }
+    public static void reportErrorType(String msg,int type, Map<String,Object> metaData){
+        NBSAppAgent.reportError(msg,type,metaData);
+    }
+    public static void reportException(String msg,int type,Exception e,Map<String,Object> metaData){
+        NBSAppAgent.reportError(msg,type,e
+                ,metaData);
+    }
+    public static void reportExceptionType(String msg,int type,Exception e,Map<String,Object> metaData){
+        NBSAppAgent.reportError(msg,type,e,metaData);
     }
     public static void setUserIdentifier(String uid){
         NBSAppAgent.setUserIdentifier(uid);

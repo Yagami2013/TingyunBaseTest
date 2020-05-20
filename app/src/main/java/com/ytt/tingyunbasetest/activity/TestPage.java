@@ -62,13 +62,14 @@ public class TestPage extends AppCompatActivity {
                         CommonTools.alert(getApplicationContext(),"action response finish");
                         break;
                     case 6:
-                        Map<String,Object> meta=new HashMap<String, Object>();
-                        try {
-                            meta.put("class",this);
-                            throw new Exception();
-                        }catch (Exception e){
-                            Tingyun.reportException("error message",e,meta);
-                        }
+                        startActivity(new Intent(TestPage.this,CustomError.class));
+//                        Map<String,Object> meta=new HashMap<String, Object>();
+//                        try {
+//                            meta.put("class",this);
+//                            throw new Exception();
+//                        }catch (Exception e){
+//                            Tingyun.reportException("error message",e,meta);
+//                        }
                         break;
                     case 7:
                         Trace.getCrash();

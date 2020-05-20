@@ -13,7 +13,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
-        classpath  fileTree(dir:'/home/kaitlyn/Projects/nbs/rewriter-2.15.0',include:['*.jar'])
+        classpath  fileTree(dir:'/home/kaitlyn/Desktop/tingyun/2.13.7.4',include:['*.jar'])
         //classpath  fileTree(dir:'/Users/ytt/Desktop/TingyunApp-ea-Android-2.13.7/TY_EA_rewriter',include:['*.jar'])
         //classpath "com.networkbench:tingyun-ea-agent-android-gradle-plugin:2.13.7"
         
