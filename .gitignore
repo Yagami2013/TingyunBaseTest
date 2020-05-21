@@ -1,5 +1,5 @@
 *.iml
-/app/src/main/java/com/ytt/tingyunbasetest/util/Keys.java
+Keys.java
 .gradle
 /local.properties
 /.idea/caches
