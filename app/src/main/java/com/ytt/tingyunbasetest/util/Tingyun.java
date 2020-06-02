@@ -11,11 +11,11 @@ import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 import java.util.Map;
 
 public class Tingyun {
-    private static String key3_0Sun="";
+    private static String key3_0Sun="094e27493fb54536bee392598b1a4544";
     public static void initWukong(Context context){
 
         NBSAppAgent.setLicenseKey(key3_0Sun)
-                .setHttpEnabled(true)
+                //.setHttpEnabled(true)
                 .setStartOption(511)
                 .start(context); 
 
