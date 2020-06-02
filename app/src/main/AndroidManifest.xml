@@ -31,7 +31,11 @@
         </activity>
         <activity android:name=".activity.TestPage"/>
         <activity android:name=".activity.X5Demo"/>
+<<<<<<< HEAD
         <activity android:name=".activity.NewWorkPage"/>
+=======
+        <activity android:name=".activity.CustomError"/>
+>>>>>>> 1dfdb7d43286cd471fc15c840af103d377dc21b5
         <service android:name=".service.NetRequest"
             android:process=":NetService"/>
     </application>
