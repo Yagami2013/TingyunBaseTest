@@ -11,11 +11,10 @@ import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 import java.util.Map;
 
 public class Tingyun {
-    private static String key="";
     public static void initWukong(Context context){
-        NBSAppAgent.setLicenseKey(key)
-                .setHttpEnabled(true)
-                .setRedirectHost("")
+        NBSAppAgent.setLicenseKey(Keys.saas_hope)
+                .setHttpEnabled(false)
+                .setRedirectHost(Keys.host_saas)
                 .setStartOption(511)
                 .start(context); 
 
@@ -25,20 +24,16 @@ public class Tingyun {
         NBSAppAgent.setCustomOnResumeEndIns(className);
     }
     public static void reportException(String msg, Exception e, Map<String,Object> metaData){
-        NBSAppAgent.reportError(msg,e,metaData);
+        //NBSAppAgent.reportError(msg,e,metaData);
     }
     public static void reportError(String msg, Map<String,Object> metaData){
-        NBSAppAgent.reportError(msg,metaData);
+        //NBSAppAgent.reportError(msg,metaData);
     }
     public static void reportErrorType(String msg,int type, Map<String,Object> metaData){
-        NBSAppAgent.reportError(msg,type,metaData);
-    }
-    public static void reportException(String msg,int type,Exception e,Map<String,Object> metaData){
-        NBSAppAgent.reportError(msg,type,e
-                ,metaData);
+        //NBSAppAgent.reportError(msg,type,metaData);
     }
     public static void reportExceptionType(String msg,int type,Exception e,Map<String,Object> metaData){
-        NBSAppAgent.reportError(msg,type,e,metaData);
+        //NBSAppAgent.reportError(msg,type,e,metaData);
     }
     public static void setUserIdentifier(String uid){
         NBSAppAgent.setUserIdentifier(uid);

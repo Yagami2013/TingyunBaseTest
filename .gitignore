@@ -13,3 +13,4 @@ Keys.java
 /captures
 .externalNativeBuild
 .cxx
+build.gradle
