@@ -1,27 +1,17 @@
 package com.ytt.tingyunbasetest.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ytt.tingyunbasetest.R;
 import com.ytt.tingyunbasetest.data.Url;
-import com.ytt.tingyunbasetest.databuilder.Trace;
-import com.ytt.tingyunbasetest.service.NetRequest;
-import com.ytt.tingyunbasetest.util.CommonTools;
-import com.ytt.tingyunbasetest.util.OkHttp3;
-import com.ytt.tingyunbasetest.util.Tingyun;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.ytt.tingyunbasetest.databuilder.OkHttp3;
 
 public class NewWorkPage extends AppCompatActivity {
 

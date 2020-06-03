@@ -1,7 +1,9 @@
-package com.ytt.tingyunbasetest.util;
+package com.ytt.tingyunbasetest.databuilder;
 
 import android.os.Environment;
 import android.util.Log;
+
+import com.ytt.tingyunbasetest.util.LogY;
 
 import java.io.File;
 import java.io.FileOutputStream;
