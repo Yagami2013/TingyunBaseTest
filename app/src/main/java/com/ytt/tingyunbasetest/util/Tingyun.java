@@ -11,13 +11,9 @@ import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 import java.util.Map;
 
 public class Tingyun {
-
-    private static String key3_0Sun="";
     public static void initWukong(Context context){
 
-        NBSAppAgent.setLicenseKey(key3_0Sun)
-                .setHttpEnabled(true)
-                .setRedirectHost("")
+        NBSAppAgent.setLicenseKey(Keys.saas_hope)
                 .setStartOption(511)
                 .start(context); 
 
