@@ -13,11 +13,13 @@ import java.util.Map;
 public class Tingyun {
     public static void initWukong(Context context){
 
-        NBSAppAgent.setLicenseKey(Keys.saas_hope)
-                .setStartOption(511)
+        NBSAppAgent.setLicenseKey(Keys.ea_wlds)
+                .setRedirectHost(Keys.host_wlds)
+                .withLocationServiceEnabled(true)
+                //.setStartOption(511)
                 .start(context); 
 
-        NBSAppAgent.setUserIdentifier("123");
+        NBSAppAgent.setUserIdentifier(CommonTools.getMac(context));
     }
     public static void setAppStartEnd(String className){
         NBSAppAgent.setCustomOnResumeEndIns(className);
