@@ -13,11 +13,13 @@ import com.ytt.tingyunbasetest.activity.TestPage;
 import com.ytt.tingyunbasetest.databuilder.Trace;
 import com.ytt.tingyunbasetest.util.CommonTools;
 import com.ytt.tingyunbasetest.util.LogY;
+import com.ytt.tingyunbasetest.util.Tingyun;
 
 import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
     LogY logger=new LogY(this.getClass().getSimpleName());
+    private String mac;
     //LogY logger=new LogY(this.getLocalClassName());
     /*crash,
     Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String android.content.Context.getPackageName()' on a null object reference
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mac=CommonTools.getMac(getApplicationContext());
         logger.msg("onCreate run...");
         grantPermissions();
         buttonInit();
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, TestPage.class);
+                Tingyun.initWukong(v.getContext(),mac);
                 startActivity(intent);
             }
         });
