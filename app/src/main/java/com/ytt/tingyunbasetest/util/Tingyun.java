@@ -11,15 +11,26 @@ import com.networkbench.agent.impl.instrumentation.NBSWebChromeX5Client;
 import java.util.Map;
 
 public class Tingyun {
-    public static void initWukong(Context context,String mac){
+    public static void init(Context context){
 
-        NBSAppAgent.setLicenseKey(Keys.ea_gyh)
-                //.setDefaultCert(false)//未来电视,true表示接受所有证书
-                .setHttpEnabled(true)
-                .setRedirectHost(Keys.host_ea)
+        NBSAppAgent.setLicenseKey(Keys.ea_wlds)
+                .setDefaultCert(false)//未来电视,true表示接受所有证书
+                //.setHttpEnabled(true)
+                .setRedirectHost(Keys.host_wlds)
                 .withLocationServiceEnabled(true)
                 //.setStartOption(511)
                 .start(context); 
+
+        NBSAppAgent.setUserIdentifier(CommonTools.getMac(context));
+    }
+    public static void initWukong(Context context,String mac){
+        NBSAppAgent.setLicenseKey(Keys.ea_wlds)
+                .setDefaultCert(false)//未来电视,true表示接受所有证书
+                //.setHttpEnabled(true)
+                .setRedirectHost(Keys.host_wlds)
+                .withLocationServiceEnabled(true)
+                //.setStartOption(511)
+                .start(context);
 
         NBSAppAgent.setUserIdentifier(mac);
     }
